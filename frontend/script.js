@@ -12,8 +12,9 @@ let cartCount = 0;
 const productImages = {
   1: "https://images.pexels.com/photos/1813124/pexels-photo-1813124.jpeg?auto=compress&cs=tinysrgb&w=600",
   2: "https://images.pexels.com/photos/3394664/pexels-photo-3394664.jpeg?auto=compress&cs=tinysrgb&w=600",
-  3: "https://images.pexels.com/photos/2774062/pexels-photo-2774062.jpeg?auto=compress&cs=tinysrgb&w=600"
+  3: "https://images.pexels.com/photos/19081933/pexels-photo-19081933.jpeg?auto=compress&cs=tinysrgb&w=600"
 };
+
 
 // Update footer year
 yearEl.textContent = new Date().getFullYear();
