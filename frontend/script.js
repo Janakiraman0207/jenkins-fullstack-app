@@ -1,25 +1,19 @@
-// Fetch products from backend API
 async function loadProducts() {
-  const list = document.getElementById("product-list");
-
   try {
-    const res = await fetchfetch("http://3.238.255.5:5000/api/products")
-;
-    const data = await res.json();
+    const response = await fetch("http://3.238.255.5:5000/api/products");
+    const products = await response.json();
 
-    data.forEach((p) => {
+    const list = document.getElementById("product-list");
+    list.innerHTML = "";
+
+    products.forEach(p => {
       const item = document.createElement("li");
-      item.className = "product";
-      item.innerHTML = `
-        <strong>${p.name}</strong><br>
-        Price: ₹${p.price}
-      `;
+      item.textContent = `${p.name} - ₹${p.price}`;
       list.appendChild(item);
     });
-
-  } catch (err) {
-    console.log("Error fetching products:", err);
-    list.innerHTML = "<p style='color:red;'>Unable to load products.</p>";
+  } catch (error) {
+    document.getElementById("product-list").innerHTML =
+      "<p style='color:red;'>Unable to load products.</p>";
   }
 }
 
