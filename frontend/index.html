@@ -2,15 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Shop UI</title>
+  <title>CloudMart – Simple Online Store</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Top Navbar -->
+  <header class="navbar">
+    <div class="nav-left">
+      <div class="logo">CloudMart</div>
+      <div class="nav-location">
+        <span class="small-text">Deliver to</span>
+        <span class="bold-text">Your Location</span>
+      </div>
+    </div>
 
-  <h1>Welcome to My Shop</h1>
-  <p>This frontend is working correctly!</p>
+    <div class="nav-center">
+      <input
+        type="text"
+        id="search-input"
+        class="search-input"
+        placeholder="Search for products..."
+      />
+      <button class="search-btn">Search</button>
+    </div>
 
-  <ul id="product-list"></ul>
+    <div class="nav-right">
+      <div class="nav-text">
+        <span class="small-text">Hello, User</span>
+        <span class="bold-text">Account & Lists</span>
+      </div>
+      <div class="nav-text">
+        <span class="small-text">Returns</span>
+        <span class="bold-text">& Orders</span>
+      </div>
+      <div class="cart">
+        🛒 <span id="cart-count">0</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Hero Banner -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Welcome to CloudMart</h1>
+        <p>
+          Simple demo store for learning Jenkins, EC2 and full-stack deployment.
+        </p>
+        <p class="hero-sub">
+          Products are loaded live from a Node.js backend running on your EC2
+          instance.
+        </p>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+      <div class="products-header">
+        <h2>Today’s Deals</h2>
+        <p class="muted">
+          Products from <code>/api/products</code> on your backend.
+        </p>
+      </div>
+
+      <p id="loading" class="muted">Loading products...</p>
+      <div id="products-grid" class="products-grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> CloudMart • Deployed with Jenkins on AWS EC2</span>
+  </footer>
 
   <script src="script.js"></script>
 </body>
