@@ -16,6 +16,7 @@ const productImages = {
 };
 
 
+
 // Update footer year
 yearEl.textContent = new Date().getFullYear();
 
