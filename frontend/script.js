@@ -3,7 +3,8 @@ async function loadProducts() {
   const list = document.getElementById("product-list");
 
   try {
-    const res = await fetch("http://localhost:5000/api/products");
+    const res = await fetchfetch("http://3.238.255.5:5000/api/products")
+;
     const data = await res.json();
 
     data.forEach((p) => {
