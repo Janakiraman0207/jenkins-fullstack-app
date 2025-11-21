@@ -1,32 +1,266 @@
-body {
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: Arial, sans-serif;
-  background: #f5f5f5;
-  padding: 20px;
+  background-color: #eaeded;
+  color: #111;
 }
 
-h1 {
-  text-align: center;
-  color: #222;
+/* NAVBAR */
+
+.navbar {
+  background-color: #131921;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 16px;
 }
 
-p {
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 30px;
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
-#product-list {
+.nav-left {
+  min-width: 220px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff9900;
+}
+
+.nav-location .small-text {
+  font-size: 11px;
+  color: #ccc;
+}
+
+.nav-location .bold-text {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.nav-center {
+  flex: 1;
+  display: flex;
+  max-width: 600px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  outline: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 14px;
+}
+
+.search-btn {
+  background-color: #febd69;
+  border: none;
+  padding: 0 16px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+}
+
+.search-btn:hover {
+  background-color: #f3a847;
+}
+
+.nav-right .nav-text {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  max-width: 400px;
-  margin: 0 auto;
+  font-size: 12px;
 }
 
-.product {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.nav-right .small-text {
+  color: #ccc;
+}
+
+.nav-right .bold-text {
+  font-weight: 600;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: bold;
+}
+
+/* MAIN LAYOUT */
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* HERO */
+
+.hero {
+  background: linear-gradient(90deg, #232f3e, #37475a);
+  color: #fff;
+  border-radius: 6px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.hero p {
+  font-size: 14px;
+}
+
+.hero-sub {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #d1d5db;
+}
+
+/* PRODUCTS */
+
+.products-section {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.products-header {
+  margin-bottom: 12px;
+}
+
+.products-header h2 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.muted {
+  font-size: 13px;
+  color: #555;
+}
+
+.products-grid {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 12px;
+}
+
+/* PRODUCT CARD */
+
+.product-card {
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-image-wrap {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f7f7;
+}
+
+.product-image-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.product-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.product-price {
+  color: #b12704;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.product-id {
+  font-size: 11px;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.add-btn {
+  background-color: #ffd814;
+  border: 1px solid #fcd200;
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #f7ca00;
+}
+
+/* FOOTER */
+
+.footer {
+  margin-top: 24px;
+  padding: 12px 16px;
+  font-size: 12px;
+  text-align: center;
+  background-color: #131921;
+  color: #ddd;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .nav-center {
+    order: 3;
+    width: 100%;
+  }
+
+  .nav-left,
+  .nav-right {
+    flex: 1;
+    justify-content: space-between;
+  }
+
+  .hero {
+    padding: 14px;
+  }
+
+  .products-section {
+    padding: 12px;
+  }
 }
